@@ -1,3 +1,11 @@
+
+/*
+Promise <Response | null>  page.goto("url")
+Promise <void> page.setWindiwSize({width: x, height:y})
+Promise <string> page.title()
+<string>  page.url()
+*/
+
 import { test } from "@playwright/test";
 
 test("Getting the title of the page", async ({ page }) => {

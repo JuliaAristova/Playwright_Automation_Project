@@ -40,11 +40,11 @@ test.describe("Test Group", () => {
     page.on("dialog", async (alert) => {
       console.log(`Alert message: ${alert.message()}`);
        await alert.accept("TEST JS PROMPT");
-       await page.waitForTimeout(3000);
+      // await page.waitForTimeout(3000);
     });
     
         let clickForJsPromptButton = page.locator("//button[@onclick='jsPrompt()']");
         await clickForJsPromptButton.click();
-        await page.waitForTimeout(3000);
+      //  await page.waitForTimeout(3000);
   });
 });
