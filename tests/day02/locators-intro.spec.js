@@ -9,14 +9,31 @@ test("Simple google test", async ({ page }) => {
 
   //let searchBox = page.locator("//textarea[@id='APjFqb']");
 
+  //has built-in waiting, returns element 
   let searchBox = page.locator("#APjFqb");
-  
-  //await searchBox.type("Playwright");
+
+  //await searchBox.type("Playwright");  //types char by char
   await searchBox.fill("Playwright");
 
   await page.waitForTimeout(3000);
-  searchBox.press("Enter"); 
-  await page.waitForTimeout(3000);
+  searchBox.press("Enter");
+  //  await page.waitForTimeout(3000);
+
+});
+test("Google search test @sel", async ({ page }) => {
+  await page.goto("https://www.google.com");
+  //  await page.waitForTimeout(3000);
+
+  // does not have aout-waiting, returns element handling 
+  let searchBox = await page.$("#APjFqb");
+  //let links = await page.$$("a");
+
+  //await searchBox.type("Playwright");
+  await searchBox.fill("Playwright");
+
+  //  await page.waitForTimeout(3000);
+  searchBox.press("Enter");
+  //  await page.waitForTimeout(3000);
 
 });
 /*

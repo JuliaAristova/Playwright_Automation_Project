@@ -1,22 +1,18 @@
-import {test} from '@playwright/test';
+import { test } from '@playwright/test';
 
-test('reading env variables', async ({page}) => {
-  
-    console.log(`Username is: ${process.env.PRACTICE_USERNAME}`);
-    console.log(`Password is: ${process.env.PRACTICE_PASSWORD}`);
-});
+test('reading env variables', async ({ page }) => {
 
-test('@env-test Testing env variables', async ({ page }) => {
   console.log(`Username is: ${process.env.PRACTICE_USERNAME}`);
   console.log(`Password is: ${process.env.PRACTICE_PASSWORD}`);
 });
 
-test("Bypass authentication by encoding credentials into base64 format", async ({
-  page,
-}) => {
-  let encodedCredentials = Buffer.from(
-    `${process.env.PRACTICE_USERNAME}:${process.env.PRACTICE_PASSWORD}`
-  ).toString("base64"); //Converting username and password into base64 format
+test('@env-test Reading env variables - run through package.json', async ({ page }) => {
+
+  console.log(`Username is: ${process.env.PRACTICE_USERNAME}`);
+  console.log(`Password is: ${process.env.PRACTICE_PASSWORD}`);
+});
+test("Bypass authentication by encoding credentials into base64 format", async ({ page }) => {
+  let encodedCredentials = Buffer.from(`${process.env.PRACTICE_USERNAME}:${process.env.PRACTICE_PASSWORD}`).toString("base64"); //Converting username and password into base64 format
   await page.setExtraHTTPHeaders({
     Authorization: `Basic ${encodedCredentials}`,
   }); //Setting the base64 encoded credentials in the Authorization header

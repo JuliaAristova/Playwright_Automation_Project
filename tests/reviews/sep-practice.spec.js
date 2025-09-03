@@ -10,7 +10,7 @@ test("SEP practice", async ({ page }) => {
 
   await page.goto(process.env.SEP_QA_URL);
 
-  await page.waitForTimeout(3000);
+  //  await page.waitForTimeout(3000);
 
   //Start Application step:
   let firstNameInputBox = await page.locator(
@@ -28,11 +28,10 @@ test("SEP practice", async ({ page }) => {
   );
   await lastNameInputBox.fill("JuliaAr@gmail.com");
 
-  let emailInputBox = await page.locator("//input[@formcontrolname='email']");
+  let emailInputBox = page.locator("//input[@formcontrolname='email']");
   await phoneInputBox.fill("5710000001");
 
-  let howDidYouHearDropdown = await page.locator("//mat-label[text()='How did you hear about us?']");
-  await howDidYouHearDropdown.
-  
+  let howDidYouHearDropdown = page.locator("//mat-label[text()='How did you hear about us?']");
+  await howDidYouHearDropdown.click();
 
 });

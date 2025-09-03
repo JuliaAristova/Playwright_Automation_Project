@@ -1,0 +1,17 @@
+import { test, expect } from '@playwright/test';
+
+test('open practice url', async ({ page }) => {
+  await page.goto('https://practice.cydeo.com');
+  await page.waitForTimeout(3000);  // wait for 3 seconds for leqrning purposes
+  let pageTitle = await page.title();
+  console.log(page.title);
+  await expect(page).toHaveTitle('Practice')
+});
+
+//to run test with tag '@test' from package.json
+test("@test - open practice url", async ({ page }) => {
+  await page.goto("https://practice.cydeo.com");
+  //  await page.waitForTimeout(3000);
+  console.log(page.url());
+  await expect(page).toHaveURL("https://practice.cydeo.com/");
+});

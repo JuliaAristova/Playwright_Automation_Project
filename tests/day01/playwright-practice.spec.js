@@ -9,5 +9,5 @@ test("Open google page", async ({ page }) => {
   //test codes
   await page.goto("https://www.google.com");
 
-  await page.waitForTimeout(3000); // wait for 3 seconds for learning purpose
+  //  await page.waitForTimeout(3000); // wait for 3 seconds for learning purpose
 });
