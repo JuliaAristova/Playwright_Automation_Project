@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test.only("iframe test", async ({ page }) => {
+test("iframe test", async ({ page }) => {
   await page.goto("https://practice.cydeo.com/iframe");
   let myFrame = page.frameLocator("//iframe[@id='mce_0_ifr']");
   let elementInsideFrame = myFrame.locator("//body[@id='tinymce']");

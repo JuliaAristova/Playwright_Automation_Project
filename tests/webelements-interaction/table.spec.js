@@ -32,7 +32,7 @@ test("Select product in the table", async ({ page }) => {
   await page.waitForTimeout(3000);
 });
 
-test.only("Read all data from a page of a table with pagination", async ({
+test("Read all data from a page of a table with pagination", async ({
   page,
 }) => {
   await page.goto("https://testautomationpractice.blogspot.com/");
@@ -57,7 +57,7 @@ test.only("Read all data from a page of a table with pagination", async ({
   await page.waitForTimeout(3000);
 });
 
-test.only("Read data from all pages of a table with pagination", async ({page}) => {
+test("Read data from all pages of a table with pagination", async ({ page }) => {
   await page.goto("https://testautomationpractice.blogspot.com/");
   const table = page.locator("#productTable");
   const pages = await page.locator("#pagination li a");
